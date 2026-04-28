@@ -8,8 +8,8 @@ locals {                               // Using local variable because tags are 
 
 module "rg" {
   source                  = "../../modules/azurerm_resource_group"
-  rg_name = "rg-dev-todoapp"
-  location = "centralindia"
+  rg_name = var.rg_name
+  location = var.rg_location
   rg_tags = local.common_tags // {
   #   "ManagedBy" =  "Terraform"
   #   "Owner" = "TodoAppTeam"
